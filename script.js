@@ -1,6 +1,3 @@
-
-
-var flag = 0;
 //register
 
 function register() {
@@ -74,7 +71,7 @@ user.innerHTML = `Welcome ${user1}`;
 
 //after loading details should be there 
 userDetails = JSON.parse(localStorage.getItem(username));
-if('incomeArray' in userDetails && flag == 0 ) {
+if('incomeArray' in userDetails) {
     incomeArr = userDetails.incomeArray ;
     
     incomeArr.map(income => {
@@ -377,9 +374,9 @@ function clearAll() {
             expense.parentNode.removeChild(expense);
         });
 
-        const user = document.getElementById('user');
+        //const user = document.getElementById('user');
         //console.log(user,username);
-        user.innerHTML = `Welcome ${user1}`;
+        //user.innerHTML = `Welcome ${user1}`;
 
         //changing  details in input fields to empty string
         incomeType.value = '';
@@ -388,7 +385,14 @@ function clearAll() {
         expenseType.value = '';
         expenseAmount.value = '';
 
-        flag = 1;
+        //initialisign again arrays & balance in local storage as empty
+
+        const userDetails = JSON.parse(localStorage.getItem(username));
+        userDetails.incomeArray = [];
+        userDetails.expenseArray = [];
+        userDetails.balance = 0;
+
+        localStorage.setItem(username,JSON.stringify(userDetails)); //setting local storage with updated data
 
         alert("All data cleared successfully");
    } else {
@@ -405,6 +409,6 @@ function clearAll() {
 //logout
 
 function logout() {
-    localStorage.clear();
+    localStorage.clear(); // clearing localStorage
     location = "./index.html";
 }

@@ -1,0 +1,231 @@
+.main_body  {
+    background-color: #D7E4C0;
+    display:flex;
+    align-items: center !important;
+}
+
+.head  {
+    font-size: 3rem;
+    color: #f3bb66;
+    font-family: cursive;
+}
+
+.head span  {
+    color:blueviolet;
+}
+
+.head_caption  {
+    color: blueviolet;
+    font-family: cursive;
+}
+
+
+.budget_gif {
+    width:30rem;
+    height:25rem;
+}
+
+.row h1 {
+    color: #7478f7;
+}
+
+.hor_line  {
+    width:95%;
+    height:0.15rem ;
+    
+}
+
+.row input  {
+    width:95%;
+}
+
+/*   Register html  */
+
+.reg_body  {
+    background-color: antiquewhite;
+    height:100vh;
+}
+
+.reg_body .reg_gif {
+    width:30rem;
+    height:25rem;
+}
+
+.reg_body .reg_heading {
+    display:flex;
+    align-items: center;
+    gap:0.3rem;
+}
+
+.reg_body .reg_img  {
+    width:2.5rem;
+    height:2.5rem;
+    mix-blend-mode: color-burn;
+    border:none;
+}
+
+/* home html styling */
+
+.home  {
+    background-color: rgb(145, 223, 226) !important;
+    overflow-x: hidden;
+}
+
+.home .cont {
+    display:flex;
+    flex-direction: column; 
+    width: 100%;
+    height:100vh;    
+}
+
+.home .user_name  {
+    display:flex;
+    justify-content: space-between;
+    align-items: center; 
+    height:50px;
+    margin:10px 20px;  
+}
+
+
+.home .head1 {
+    font-size: 3.3rem !important;
+    color: green;
+
+}
+
+.home .row input  {
+    width:100%;
+}
+
+.home .col   {
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.home .tot_bal {
+    width:35%;
+    gap:2.5rem;
+    background-color: rgb(252, 213, 141);
+
+}
+
+.home .tot_exp  {
+    width:35%;
+    background-color: #c7daf7;
+    gap:2.5rem;
+}
+
+.hor_line1  {
+    /*width:95%;*/
+    height:0.15rem ;
+    
+}
+
+.home .clear  {
+    width:14% !important;
+}
+
+.home .details {
+    margin-top:6rem;
+}
+
+.home #income_details {
+    display:flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+
+.home #income_details  .income_ul  {
+    width:92%;
+    list-style: none;
+    display: flex;
+    /*gap:5.6rem;*/
+    justify-content: start;
+    background-color: rgb(25, 135, 84);
+    border:5px solid rgb(245, 242, 242);
+    border-top: none;
+    border-left:none;
+    border-right:none;
+}
+
+
+
+.home #expense_details {
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+
+.home #expense_details  .expense_ul  {
+    width:92%;
+    list-style: none;
+    display: flex;
+    /*gap:5.6rem;*/
+    justify-content: start;
+    background-color: rgb(220, 53, 69);
+    border:5px solid rgb(245, 242, 242);
+    border-top: none;
+    border-left:none;
+    border-right:none;
+}
+
+.home .myList  {
+    width:92%;
+    list-style: none;
+    display: flex;
+    /*gap:5.6rem;*/
+    justify-content: start;
+    background-color: rgb(199, 218, 247);
+    border:3px solid rgb(25, 135, 84);
+    border-top: none;
+    border-left:none;
+    border-right:none;
+    padding:10px 0px;
+    padding-left: 35px;
+    margin:0 !important;
+}
+
+.home .myList li  {
+    width:24%;
+    font-weight:normal !important;
+    font-size: small;
+}
+
+.home .myList .dateTime  {
+    width:28% !important;
+}
+
+
+.home .myList1  {
+    width:92%;
+    list-style: none;
+    display: flex;
+    /*gap:5.6rem;*/
+    justify-content: start;
+    background-color: rgb(199, 218, 247);
+    border:3px solid rgb(220, 53, 69);
+    border-top: none;
+    border-left:none;
+    border-right:none;
+    padding:10px 0px;
+    padding-left: 35px;
+    margin:0 !important;
+}
+
+.home .myList1 li  {
+    width:24%;
+    font-weight:normal !important;
+    font-size: small;
+}
+
+.home .myList1 .dateTime  {
+    width:28% !important;
+}
+
+
+

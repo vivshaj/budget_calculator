@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Buddy -  Budgeting Made Simple: Your Financial GPS!</title>
+
+    <!-- favicon -->
+    <link rel="icon" href="./image/budget_calculator_favicon.png" type="image/png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="home">
+    <div class="cont">
+        <div class="user_name">
+            <h1 id="user" class="text-primary-emphasis ms-2"><i class="fa fa-solid fa-user fa-sm fa-bounce"></i> Welcome user</h1>
+            <button onclick="logout()" class="btn btn-danger rounded fw-bold"><i class="fa-solid fa-power-off pe-1"></i> Logout</button>
+        </div>
+        <div class="row pt-4 mx-5 mb-5">
+                <h1 class="head head1 text-center mb-5"><span class="text-primary-emphasis">B</span>udget <span class="text-primary-emphasis">B</span>uddy</h1>
+                <div class="col ps-5">
+                    <div class="tot_bal d-flex flex-column text-primary-emphasis rounded px-4 py-3 mb-4">
+                            <h1 class="fs-4 fw-medium text-center text-primary-emphasis">Total Balance</h1>
+                            <p class="fw-normal fs-5 text-center text-primary-emphasis mb-0">Rs <span id="tot_bal_value" class="ps-2">0 </span>/-</p>
+                    </div>
+                    <div class="income w-75 d-flex flex-column">
+                        <h2 class="fs-4 text-center text-success mb-3">Add Income</h2>
+                        <div class="hor_line1 mb-4 bg-success"></div> 
+                        <input id="incomeType" class="form-control fw-medium mb-3" type="text" placeholder="Enter income type">
+                        <input id="incomeAmount" class="form-control fw-medium mb-3" type="text" placeholder="Amount">
+                        <button onclick="addIncome()" class="text-light bg-success rounded fw-bold border-0 mt-4 py-2">Add income</button>
+                    </div>
+                </div>
+                <div class="col  pe-5">
+                    <div class="tot_exp d-flex flex-column text-primary-emphasis rounded px-4 py-3 mb-4">
+                        <h1 class="fs-4 fw-medium text-center text-primary-emphasis">Total Expense</h1>
+                        <p class="fw-normal fs-5 text-center text-primary-emphasis mb-0">Rs <span id="tot_exp_value" class="ps-2">0 </span>/-</p>
+                    </div>
+                    <div class="expense w-75 d-flex flex-column">
+                        <h2 class="fs-4 text-center text-danger mb-3">Add Expense</h2>
+                        <div class="hor_line1 mb-4 bg-danger"></div> 
+                        <input id="expenseType" class="form-control fw-medium mb-3" type="text" placeholder="Enter expense type">
+                        <input id="expenseAmount" class="form-control fw-medium mb-3" type="text" placeholder="Amount">
+                        <button onclick="addExpense()" class="text-light bg-danger rounded fw-bold border-0 mt-4 py-2">Add expense</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center w-100"><button onclick="clearAll()" class="clear bg-warning rounded py-2  fw-bold border-0">Clear All</button></div>
+            
+        </div>
+    </div>
+    <!-- Income & expense details  -->
+    <h1 class="details text-primary-emphasis text-center mb-5">Income and Expense Details</h1>
+    <div class="row">
+        <div class="col-6">
+            <div id="income_details">
+                <div class="w-100"><h1 class="ms-5 ps-1 pb-2 text-start fs-4 text-primary">Income</h1></div>
+                <ul class="py-2 text-light income_ul m-0">	
+                    <li class="fw-bold w-25">Type</li>
+                    <li class="fw-bold w-25">Amount</li>
+                    <li class="fw-bold w-25">Balance</li>
+                    <li class="fw-bold w-25">Date & Time</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div id="expense_details">
+                <div class="w-100"><h1 class="pb-2 text-start fs-4 text-primary">Expense</h1></div>
+                <ul class="py-2 text-light expense_ul m-0">	
+                    <li class="fw-bold w-25">Type</li>
+                    <li class="fw-bold w-25">Amount</li>
+                    <li class="fw-bold w-25">Balance</li>
+                    <li class="fw-bold w-25">Date & Time</li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+      
+    <!-- Link JS -->
+    <script src="./script.js"></script>
+</body>
+</html>

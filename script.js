@@ -205,7 +205,7 @@ function addIncome() {
 
 //after loading details should be there 
 userDetails = JSON.parse(localStorage.getItem(username));
-if('expenseArray' in userDetails && flag == 0) {
+if('expenseArray' in userDetails) {
     expenseArr = userDetails.expenseArray ;
     
     expenseArr.map(expense => {

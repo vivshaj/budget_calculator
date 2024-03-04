@@ -207,6 +207,7 @@ function addIncome() {
 userDetails = JSON.parse(localStorage.getItem(username));
 if('expenseArray' in userDetails) {
     expenseArr = userDetails.expenseArray ;
+    console.log(expenseArr);
     
     expenseArr.map(expense => {
         // Step 1: Create a new ul element

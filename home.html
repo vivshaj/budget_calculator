@@ -18,11 +18,14 @@
     <!-- font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- chart.js cdn -->
+    
+
 </head>
 <body class="home">
     <div class="cont">
         <div class="user_name">
-            <h1 id="user" class="text-primary-emphasis ms-2"><i class="fa fa-solid fa-user fa-sm fa-bounce"></i> Welcome user</h1>
+            <h1 id="user" class="text-center text-primary-emphasis fs-3 mb-0"><i class="fa fa-solid fa-user fa-sm fa-bounce"></i> Welcome user</h1>
             <button onclick="logout()" class="btn btn-danger rounded fw-bold"><i class="fa-solid fa-power-off pe-1"></i> Logout</button>
         </div>
         <div class="row pt-4 mx-5 mb-5">
@@ -54,13 +57,13 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-center w-100"><button onclick="clearAll()" class="clear bg-warning rounded py-2  fw-bold border-0">Clear All</button></div>
+            <div class="d-flex justify-content-center w-100"><button onclick="clearAll()" class="bg-warning rounded py-2 px-4 fw-bold border-0">Clear All</button></div>
             
         </div>
     </div>
     <!-- Income & expense details  -->
     <h1 class="details text-primary-emphasis text-center mb-5">Income and Expense Details</h1>
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-6">
             <div id="income_details">
                 <div class="w-100"><h1 class="ms-5 ps-1 pb-2 text-start fs-4 text-primary">Income</h1></div>
@@ -87,8 +90,37 @@
 
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <h1 class="text-primary-emphasis text-center">Expense Pie-Chart</h1>
+        </div>
+        <div class="col-3"></div>
+
+        <div class="col-3"></div>
+        <div class="col-6 mt-3">
+            <h1 class="text-primary-emphasis text-center"><button onclick="showPieChart()" type="button" class="btn btn-primary fw-bold px-4 py-2" id="showPie">Show Pie-Chart</button></h1>
+        </div>
+        <div class="col-3"></div>
+
+        <div class="col-4"></div>
+        <div id="pieContainer" class="col-4 mt-5 mb-5 d-flex justify-content-center">
+            <div style="width:400px;height:400px;">
+                <canvas id="pie-chart"></canvas>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    
+        
+    
+    </div>
+
+        
+    
       
     <!-- Link JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>

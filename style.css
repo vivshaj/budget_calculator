@@ -82,9 +82,11 @@
     display:flex;
     justify-content: space-between;
     align-items: center; 
-    height:50px;
+    height:45px;
     margin:10px 20px;  
 }
+
+
 
 
 .home .head1 {
@@ -124,9 +126,7 @@
     
 }
 
-.home .clear  {
-    width:14% !important;
-}
+
 
 .home .details {
     margin-top:6rem;

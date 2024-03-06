@@ -37,8 +37,8 @@
                 <div class="hor_line mb-4 bg-primary"></div>          
                 
                 <input type="text" class="form-control mb-4" id="login_uname" placeholder="Username">
-                <input type="password" class="form-control mb-5" name="" id="login_pswd" placeholder="Password">
-                <button onclick="login()" class="text-light bg-primary fw-bolder border-0 rounded px-4 py-2 mb-2">Login</button>
+                <input onkeypress="triggerButton(event)" type="password" class="form-control mb-5" name="" id="login_pswd" placeholder="Password">
+                <button onclick="login()" class="text-light bg-primary fw-bolder border-0 rounded px-4 py-2 mb-2" id="login">Login</button>
                 <p class="text-center text-primary">Don't have an account?  <a href="./register.html" class="text-decoration-none fw-bold ps-2">Register</a></p>
 
             </div>

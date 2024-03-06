@@ -37,6 +37,16 @@ function register() {
 
 //login
 
+//on clicking 'Enter' after providing values to second input field it should trigger the button 
+
+function triggerButton(event) {
+    const button = document.getElementById('login');
+    if(event.keyCode === 13 ) {  // 'Enter' key code is 13 
+        button.click();
+    }
+        
+}
+
 function login() {
     //1. fetch details 
     uname = login_uname.value;
@@ -64,7 +74,7 @@ const username = localStorage.getItem('username');
 var user1 = username;
 const user = document.getElementById('user');
 //console.log(user,username);
-user.innerHTML = `Welcome ${user1}`;
+user.innerHTML = `<i class="fa fa-solid fa-user fa-sm fa-bounce"></i> Welcome ${user1}`;
 
 
 //Adding income
@@ -191,6 +201,10 @@ function addIncome() {
                 result.textContent = userDetails.balance;
 
                 alert("Amount added successfully!!");
+                //hiding or clearing pie-chart 
+
+                const pieContainer = document.getElementById('pieContainer');
+                pieContainer.innerHTML = ``;
 
             }
             }
@@ -322,14 +336,23 @@ function addExpense() {
                     result.textContent = totExp;
                     alert("Expense added successfully!!");
 
+                    localStorage.setItem(username,JSON.stringify(userDetails));
+
                     //5. Total Balance 
 
                     var userDetails = JSON.parse(localStorage.getItem(username));
 
                     var result1 = document.getElementById('tot_bal_value');
                     result1.textContent = userDetails.balance;
-                    
+
+                    localStorage.setItem(username,JSON.stringify(userDetails));
+
+                    //hiding or clearing pie-chart 
+
+                    const pieContainer = document.getElementById('pieContainer');
+                    pieContainer.innerHTML = ``;
                 }
+
                 }
                 
     
@@ -395,6 +418,11 @@ function clearAll() {
 
         localStorage.setItem(username,JSON.stringify(userDetails)); //setting local storage with updated data
 
+        //hiding or clearing pie-chart 
+
+        const pieContainer = document.getElementById('pieContainer');
+        pieContainer.innerHTML = ``;
+
         alert("All data cleared successfully");
    } else {
     alert("Nothing has been cleared");
@@ -403,6 +431,85 @@ function clearAll() {
 
 
 
+
+
+  //show pie chart 
+
+  function showPieChart() {
+    const userDetails = JSON.parse(localStorage.getItem(username));
+    const expArr = userDetails.expenseArray;
+    const incArr = userDetails.incomeArray;
+    totInc = incArr.reduce((acc,inc)=> acc + inc.amount,0);
+    bal = userDetails.balance;
+
+
+    if(expArr.length != 0 || totInc == bal ) {
+
+        const pieContainer = document.getElementById('pieContainer');
+        pieContainer.innerHTML = `<div style="width:400px;height:400px;">
+           <canvas id="pie-chart"></canvas>
+        </div>`
+    
+        
+        remBal = userDetails.balance;
+        //label =['Balance'];
+        //bgColor = ['violet'];
+        //dat = [remBal];
+        label=[];
+        bgColor=[];
+        dat = [];
+    
+        //updating 
+        expArr.map(expense => {
+         label.push(expense.expenseTyp);
+         dat.push(expense.amount);
+         bgColor.push(getRandomColor());
+        });
+
+        label.push('Balance');
+        dat.push(remBal)
+        bgColor.push('violet');
+     
+        //pie chart 
+     
+        new Chart(document.getElementById('pie-chart'), {
+            type: 'pie',
+            data: {
+                labels: label,
+                datasets: [{
+                backgroundColor: bgColor,
+                data: dat
+                }], 
+            },
+            options: {
+                //title: {
+                //display: true,
+                //text: 'Pie Chart for admin panel'
+                //},
+                responsive: true
+            }
+        });
+     
+        //random colour 
+        function getRandomColor() {
+             // Generate random values for red, green, and blue components
+             const red = Math.floor(Math.random() * 256); // Random value between 0 and 255
+             const green = Math.floor(Math.random() * 256);
+             const blue = Math.floor(Math.random() * 256);
+             
+             // Convert RGB values to hexadecimal format
+             const color = "#" + red.toString(16).padStart(2, '0') + // Convert decimal to hexadecimal and pad with zeros if necessary
+                           green.toString(16).padStart(2, '0') +
+                           blue.toString(16).padStart(2, '0');
+             
+             return color;
+        }
+    } else {
+        alert("Nothing to show in pie-chart");
+    }
+
+
+  }
 
 
 
